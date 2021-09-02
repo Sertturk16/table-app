@@ -64,6 +64,7 @@ function getData(){
 
 function offset(){
     rows_per_page = document.getElementById("row-number").value;
+    current_page = 1;
     fillTable();
 }
 
