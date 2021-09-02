@@ -1,6 +1,6 @@
 var myArr = [];
 var rows_per_page = 10;
-var current_page = 2;
+var current_page = 1;
 
 
 function createButton(buttonIndex){
