@@ -1,0 +1,36 @@
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.table-container{
+    width: 100%;
+    display: flex;
+    max-width: 1000px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#table{
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+#table td, #table th,#table tr{
+  border: 3px solid black;
+  width: 33%;
+  text-align: center;
+}
+
+.set-div{
+  display: flex;
+  width: 1000px;
+}
+
+#buttons{
+  margin-left: auto;
+}
+
+
