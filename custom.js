@@ -9,7 +9,9 @@ function createButton(buttonIndex){
     let buttons = document.getElementById("buttons");
     btn.classList.add("btnClass");
     btn.addEventListener("click", function(){
+        document.getElementById("buttons").childNodes[current_page-1].classList.remove("active");
         current_page = buttonIndex;
+        btn.classList.add("active");
         fillTable();
     });
     return btn;
@@ -28,6 +30,7 @@ function setupButtons(){
     for(let i = 1;i <= Math.ceil(buttonCount);i++){
         document.getElementById("buttons").appendChild(createButton(i));
     }
+    document.getElementById("buttons").childNodes[0].classList.add("active");
 }
 
 function fillTable(){
@@ -63,10 +66,19 @@ function getData(){
 }
 
 function offset(){
-    rows_per_page = document.getElementById("row-number").value;
-    current_page = 1;
-    fillTable();
+    if(document.getElementById("row-number").value > 0){
+        if(document.getElementById("row-number").value > 50) document.getElementById("row-number").value = 50; 
+        rows_per_page = document.getElementById("row-number").value;
+        current_page = 1;
+        fillTable();
+    }
+}
+
+function minmax(){
+    document.getElementById("row-number").setAttribute("min",0);
+    document.getElementById("row-number").setAttribute("max",50);
 }
 
 document.onload = getData();
+document.onload = minmax();
 
